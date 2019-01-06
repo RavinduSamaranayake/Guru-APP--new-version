@@ -56,6 +56,7 @@
         <activity android:name=".syllabusDescription" />
         <activity android:name=".viewComments" />
         <activity android:name=".showMcq" />
+        <activity android:name=".searchCoursesWebview"></activity>
     </application>
 
 </manifest>

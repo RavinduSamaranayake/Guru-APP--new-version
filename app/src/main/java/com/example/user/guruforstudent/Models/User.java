@@ -157,6 +157,27 @@ import java.util.List;
         return userinfolist;
     }
 
+    public int getCurUserId(){ //get the user level
+        int uid =0;
+        auth = FirebaseAuth.getInstance();
+        String mail = auth.getCurrentUser().getEmail();
+        try {
+            ps = con.prepareStatement("SELECT `id` FROM `users` WHERE `email`=?");
+            ps.setString(1, mail);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                uid = rs.getInt(1);
+
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return uid;
+    }
+
     }
 
 
