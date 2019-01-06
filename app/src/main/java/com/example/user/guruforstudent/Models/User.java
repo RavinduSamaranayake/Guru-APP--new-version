@@ -23,6 +23,8 @@ import java.sql.Statement;
 import java.sql.*;
 // Import Java package for File I/O
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
      * Created by USER on 8/14/2018.
@@ -128,6 +130,32 @@ import java.io.*;
                 e.printStackTrace();
             }
         }
+    public List<String> getUserInfo(){ //get the user information
+        List<String> userinfolist = new ArrayList<String>();
+        auth = FirebaseAuth.getInstance();
+        String mail = auth.getCurrentUser().getEmail();
+        try {
+            ps = con.prepareStatement("SELECT `firstname`, `Lastname`, `email` FROM `users` WHERE `email` = ?");
+            ps.setString(1, mail);
+
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                String fname = rs.getString(1);
+                String lname = rs.getString(2);
+                String uname = rs.getString(3);
+                userinfolist.add(fname);
+                userinfolist.add(lname);
+                userinfolist.add(uname);
+
+
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userinfolist;
+    }
 
     }
 

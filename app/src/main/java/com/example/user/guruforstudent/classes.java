@@ -30,6 +30,7 @@ public class classes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         std = new Student();
         tch = new teacher();
         user =new User();

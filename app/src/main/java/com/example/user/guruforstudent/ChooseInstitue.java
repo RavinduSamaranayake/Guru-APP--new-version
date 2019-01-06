@@ -45,6 +45,7 @@ public class ChooseInstitue extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_waiting_reg);
+        getSupportActionBar().hide();
         spin = (Spinner) findViewById(R.id.insNameSpin);
         crsSpin = (Spinner) findViewById(R.id.crsNameSpin);
         regid = (EditText) findViewById(R.id.reg);

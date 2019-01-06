@@ -18,6 +18,7 @@ public class syllabusList extends AppCompatActivity {
     //CourseList crs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_syllabus_list);
         list_1 = (ListView)findViewById(R.id.clzlistview);

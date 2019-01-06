@@ -72,6 +72,7 @@
         android:inputType="textEmailAddress"
         android:padding="16dp"
         android:paddingLeft="10dp"
+        android:textColor="@color/Black"
         android:textColorHint="#fff"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

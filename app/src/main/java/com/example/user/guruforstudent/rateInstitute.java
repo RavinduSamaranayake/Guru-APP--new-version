@@ -24,8 +24,10 @@ public class rateInstitute extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate_institute);
+        //getActionBar().hide();
         std = new Student();
         tch = new teacher();
         user =new User();

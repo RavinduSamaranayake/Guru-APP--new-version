@@ -22,6 +22,7 @@ public class Institutes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_institutes);
         list_1 = (ListView)findViewById(R.id.institutelist);

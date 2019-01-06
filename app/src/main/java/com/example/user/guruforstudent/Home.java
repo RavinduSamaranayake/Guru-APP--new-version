@@ -14,13 +14,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.user.guruforstudent.Models.User;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.List;
+
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawer;
     NavigationView navigationView;
+    View navHeaderView;
     Toolbar toolbar = null;
     FirebaseAuth auth;
     CardView addIns;
@@ -45,7 +49,20 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
+
+        //navHeaderView = navigationView.inflateHeaderView(R.layout.nav_header_home);
+
+
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View hView =  navigationView.getHeaderView(0);
+        TextView tvUname = (TextView)hView.findViewById(R.id.txtUname);
+        TextView tvEmail = (TextView)hView.findViewById(R.id.txtEmail);
+        List<String> userinfo = user.getUserInfo();
+        String fullname = userinfo.get(0) + " " + userinfo.get(1);
+        String uname = userinfo.get(2);
+        tvUname.setText(fullname);
+        tvEmail.setText(uname);
+
         navigationView.setNavigationItemSelectedListener(this);
         addIns = (CardView)findViewById(R.id.addInstitue);
         viewIns = (CardView)findViewById(R.id.viewInstitue);
@@ -139,7 +156,12 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
+
     @Override
+
+
+
+
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();

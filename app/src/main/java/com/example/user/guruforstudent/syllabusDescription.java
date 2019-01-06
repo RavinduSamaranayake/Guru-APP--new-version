@@ -11,8 +11,10 @@ public class syllabusDescription extends AppCompatActivity {
     TextView points;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_syllabus_description);
+
         String name = getIntent().getStringExtra("name");
         String descript = getIntent().getStringExtra("description");
         String lpoins = getIntent().getStringExtra("points");

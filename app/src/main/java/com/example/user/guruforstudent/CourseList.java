@@ -13,12 +13,14 @@ import com.example.user.guruforstudent.Models.Course;
 import java.util.List;
 
 public class CourseList extends AppCompatActivity {
+
     ListView list_1;
     InstituteList institutelist;
     Course crs;
     static int Crsid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_institutes);
         list_1 = (ListView)findViewById(R.id.institutelist);

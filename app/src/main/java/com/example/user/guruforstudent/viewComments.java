@@ -30,8 +30,10 @@ public class viewComments extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_comments);
+
         list_1 = (ListView)findViewById(R.id.commentlistview);
         ins = new Institue();
         addrevbtn = (FloatingActionButton)findViewById(R.id.addreview);
