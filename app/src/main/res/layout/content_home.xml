@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-app:layout_behavior="@string/appbar_scrolling_view_behavior"
-tools:context="com.example.user.guruforstudent.Home"
-tools:showIn="@layout/app_bar_home"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.user.guruforstudent.Home"
+    tools:showIn="@layout/app_bar_home"
     android:orientation="vertical"
     android:padding="10dp"
     android:background="@drawable/gradient"
@@ -96,7 +96,7 @@ tools:showIn="@layout/app_bar_home"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="monospace"
-                    android:text="Add"
+                    android:text="Enrollment"
                     android:textColor="#fff"
                     android:textStyle="bold" />
 
@@ -112,7 +112,7 @@ tools:showIn="@layout/app_bar_home"
                     android:fontFamily="monospace"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Add Institutes"
+                    android:text="Institutes and Courses"
                     android:textColor="#fff"
                     android:textStyle="bold" />
 
@@ -127,6 +127,7 @@ tools:showIn="@layout/app_bar_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
+            android:id="@+id/searchCrs"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:layout_width="160dp"
@@ -143,14 +144,14 @@ tools:showIn="@layout/app_bar_home"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:padding="10dp"
-                    android:src="@drawable/ic_action_timetable_main" />
+                    android:src="@drawable/ic_action_search" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="monospace"
-                    android:text="Time Table"
+                    android:text="Search"
                     android:textColor="#fff"
                     android:textStyle="bold" />
                 <View
@@ -165,7 +166,7 @@ tools:showIn="@layout/app_bar_home"
                     android:fontFamily="monospace"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="View Your Course Time table"
+                    android:text="Search Courses"
                     android:textColor="#fff"
                     android:textStyle="bold" />
 
@@ -263,7 +264,7 @@ tools:showIn="@layout/app_bar_home"
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_margin="5dp"
+                    android:layout_margin="1dp"
                     android:background="#fff" />
                 <TextView
                     android:layout_width="wrap_content"

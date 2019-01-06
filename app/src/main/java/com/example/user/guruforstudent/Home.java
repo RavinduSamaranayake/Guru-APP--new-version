@@ -31,7 +31,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     CardView viewIns;
     CardView viewModule;
     CardView rateIns;
+    CardView searchCrs;
     User user;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +70,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         viewIns = (CardView)findViewById(R.id.viewInstitue);
         viewModule = (CardView)findViewById(R.id.viewModules);
         rateIns = (CardView)findViewById(R.id.rateInstitue);
+        searchCrs = (CardView)findViewById(R.id.searchCrs);
+
+
         if(cur_ulevel == 4){
             rateIns.setVisibility(View.VISIBLE);
         }
@@ -99,8 +104,19 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 loadViewModulepg();
             }
         });
+        searchCrs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadSearchCrsPg();
+            }
+        });
 
         
+    }
+
+    private void loadSearchCrsPg() {
+        Intent intent = new Intent(this,searchCoursesWebview.class);
+        startActivity(intent);
     }
 
     private void loadViewModulepg() {

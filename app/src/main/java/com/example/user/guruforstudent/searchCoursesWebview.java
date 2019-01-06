@@ -18,7 +18,7 @@ public class searchCoursesWebview extends AppCompatActivity {
         setContentView(R.layout.activity_search_courses_webview);
             user = new User();
             String userid = Integer.toString(user.getCurUserId());
-            String Url = "https://gurugedara.ga/app/mcq/" + userid;
+            String Url = "https://gurugedara.ga/app/search/";
             progDailog = ProgressDialog.show(this, "Loading","Please wait...", true);
             progDailog.setCancelable(false);
             wv1=(WebView)findViewById(R.id.mcqWeb);
