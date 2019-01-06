@@ -9,7 +9,7 @@ tools:context="com.example.user.guruforstudent.Home"
 tools:showIn="@layout/app_bar_home"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="#fcfcfc"
+    android:background="@drawable/gradient"
     android:gravity="center"
     android:id="@+id/ll">
 
@@ -18,7 +18,8 @@ tools:showIn="@layout/app_bar_home"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/gradient">
 
         <android.support.v7.widget.CardView
             android:id="@+id/viewInstitue"
@@ -32,35 +33,39 @@ tools:showIn="@layout/app_bar_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/gradient">
 
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundpurple"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
-                    android:src="@drawable/ic_institute" />
+                    android:src="@drawable/ic_action_institute_main" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
                     android:text="View"
+                    android:textColor="#fff"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="@color/lightgray" />
+                    android:background="#fff" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:fontFamily="monospace"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="View Institutes details"
-                    android:textColor="@android:color/darker_gray" />
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -77,35 +82,39 @@ tools:showIn="@layout/app_bar_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/gradient">
 
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundgreen"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
-                    android:src="@drawable/ic_addins" />
+                    android:src="@drawable/ic_action_add_main" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
                     android:text="Add"
+                    android:textColor="#fff"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="@color/lightgray" />
+                    android:background="#fff" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:fontFamily="monospace"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Add Institutes"
-                    android:textColor="@android:color/darker_gray" />
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -127,33 +136,38 @@ tools:showIn="@layout/app_bar_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:background="@drawable/gradient">
+
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundpink"
-                    android:src="@drawable/ic_timetable"
-                    android:padding="10dp"/>
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_action_timetable_main" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
                     android:text="Time Table"
+                    android:textColor="#fff"
                     android:textStyle="bold" />
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/lightgray"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="10dp"
+                    android:background="#fff" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="49dp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:fontFamily="monospace"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="View Your Course Time table"
-                    android:textColor="@android:color/darker_gray" />
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -170,35 +184,39 @@ tools:showIn="@layout/app_bar_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/gradient">
 
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundpurple"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
-                    android:src="@drawable/ic_syllabus" />
+                    android:src="@drawable/ic_action_modules_main" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
                     android:text="View Modules"
+                    android:textColor="#fff"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_margin="10dp"
-                    android:background="@color/lightgray" />
+                    android:background="#fff" />
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:fontFamily="monospace"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="View Your Syllabus Module"
-                    android:textColor="@android:color/darker_gray" />
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
@@ -224,35 +242,38 @@ tools:showIn="@layout/app_bar_home"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:background="@drawable/gradient">
 
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/cerclebackgroundyello"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:padding="10dp"
-                    android:src="@drawable/ic_rate" />
+                    android:src="@drawable/ic_action_rate_main" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:fontFamily="monospace"
                     android:text="Rate"
+                    android:textColor="#fff"
                     android:textStyle="bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_margin="10dp"
-                    android:background="@color/lightgray" />
-
+                    android:layout_margin="5dp"
+                    android:background="#fff" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Rate Your Institue"
-                    android:textColor="@android:color/darker_gray" />
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </android.support.v7.widget.CardView>

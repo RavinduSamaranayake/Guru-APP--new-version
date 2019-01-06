@@ -40,6 +40,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_corner"
+        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
@@ -52,6 +53,7 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/rounded_corner"
+        android:paddingLeft="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -69,6 +71,7 @@
         android:hint="@string/registration_number"
         android:inputType="textEmailAddress"
         android:padding="16dp"
+        android:paddingLeft="10dp"
         android:textColorHint="#fff"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"

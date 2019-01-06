@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GuruApp-danushka.iml" filepath="$PROJECT_DIR$/GuruApp-danushka.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/Guru_Gedara_App.iml" filepath="$PROJECT_DIR$/.idea/Guru_Gedara_App.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guru_Gedara_App.iml" filepath="$PROJECT_DIR$/Guru_Gedara_App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
