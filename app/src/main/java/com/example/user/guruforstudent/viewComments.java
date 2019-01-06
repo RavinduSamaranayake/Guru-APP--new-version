@@ -66,9 +66,9 @@ public class viewComments extends AppCompatActivity {
         final Button mSendFeedback = dialog.findViewById(R.id.btnSubmit);
 
         //set width of dialog
-        int width =(int)(activity.getResources().getDisplayMetrics().widthPixels*0.95);
+        int width =(int)(activity.getResources().getDisplayMetrics().widthPixels*1.0);
         //set high of dialog
-        int high =(int)(activity.getResources().getDisplayMetrics().widthPixels*1.5);
+        int high =(int)(activity.getResources().getDisplayMetrics().widthPixels*1.6);
         dialog.getWindow().setLayout(width,high);
         dialog.show();
         mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {

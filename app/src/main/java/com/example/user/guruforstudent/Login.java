@@ -73,6 +73,8 @@ public class Login extends AppCompatActivity {
                     finish();
                 }
             }
+
+
             else if(user.getCurIdCurLevel()==4){//user level is student
                 int stid = st.getCurStId(); //get current student id
                 //String stdId = Integer.toString(stid);
@@ -86,6 +88,8 @@ public class Login extends AppCompatActivity {
                 }
             }
 
+
+
         }
 
         tomain.setOnClickListener(new View.OnClickListener() {
@@ -95,42 +99,48 @@ public class Login extends AppCompatActivity {
                 String uname = username.getText().toString();
                 String paswd = passwd.getText().toString();
 
-                auth.signInWithEmailAndPassword(uname,paswd).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(!task.isSuccessful()){
-                            Toast.makeText(Login.this,"Username or password is invalid",Toast.LENGTH_LONG).show();
-                        }else{
-                            if(user.getCurIdCurLevel()==3){//user level is teacher
-                                int tid = t.getCurTeachId(); //get current teacher id
-                               // String teachId = Integer.toString(tid);
-                                if(iteach.checkTeachStatus(tid)){ //check wether  institute registration status is 0 or 1
-                                    startActivity(new Intent(Login.this, Home.class)); //loading home page
-                                    finish();
-                                }
-                                else{ //if the registration status is 0
-                                    startActivity(new Intent(Login.this, WaitingReg.class)); //loading waitingreg page
-                                    finish();
-                                }
-                            }
-                            else if(user.getCurIdCurLevel()==4){//user level is student
-                                int stid = st.getCurStId(); //get current student id
-                               // String stdId = Integer.toString(stid);
-                                if(istud.checkStdStatus(stid)){ //check wether  institute registration status is 0 or 1
-                                    startActivity(new Intent(Login.this, Home.class)); //loading home page
-                                    finish();
-                                }
-                                else{ //if the registration status is 0
-                                    startActivity(new Intent(Login.this, WaitingReg.class)); //loading waitingreg page
-                                    finish();
-                                }
-                            }
-                        }
+                if (uname.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Username is Empty", Toast.LENGTH_LONG).show();
+                } else if (paswd.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Password is Empty", Toast.LENGTH_LONG).show();
+                }
 
-                    }
-                });
+                else {
+                    auth.signInWithEmailAndPassword(uname, paswd).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (!task.isSuccessful()) {
+                                Toast.makeText(Login.this, "Username or password is invalid", Toast.LENGTH_LONG).show();
+                            } else {
+                                if (user.getCurIdCurLevel() == 3) {//user level is teacher
+                                    int tid = t.getCurTeachId(); //get current teacher id
+                                    // String teachId = Integer.toString(tid);
+                                    if (iteach.checkTeachStatus(tid)) { //check wether  institute registration status is 0 or 1
+                                        startActivity(new Intent(Login.this, Home.class)); //loading home page
+                                        finish();
+                                    } else { //if the registration status is 0
+                                        startActivity(new Intent(Login.this, WaitingReg.class)); //loading waitingreg page
+                                        finish();
+                                    }
+                                } else if (user.getCurIdCurLevel() == 4) {//user level is student
+                                    int stid = st.getCurStId(); //get current student id
+                                    // String stdId = Integer.toString(stid);
+                                    if (istud.checkStdStatus(stid)) { //check wether  institute registration status is 0 or 1
+                                        startActivity(new Intent(Login.this, Home.class)); //loading home page
+                                        finish();
+                                    } else { //if the registration status is 0
+                                        startActivity(new Intent(Login.this, WaitingReg.class)); //loading waitingreg page
+                                        finish();
+                                    }
+                                }
+                            }
+
+                        }
+                    });
+                }
             }
         });
+
         userregpg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

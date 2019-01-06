@@ -56,6 +56,9 @@
         android:layout_marginBottom="40dp"
         android:background="@drawable/mybutton"
         android:text="Review"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

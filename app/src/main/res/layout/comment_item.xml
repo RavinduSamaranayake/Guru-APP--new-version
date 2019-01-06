@@ -14,7 +14,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:background="#1d4991"
+        android:background="#0c2047"
         android:descendantFocusability="blocksDescendants"
         android:labelFor="@+id/editText"
         android:padding="10dp"

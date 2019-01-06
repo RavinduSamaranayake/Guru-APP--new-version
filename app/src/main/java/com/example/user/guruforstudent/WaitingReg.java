@@ -15,7 +15,7 @@ public class WaitingReg extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         GifImageView gifImageView = (GifImageView) findViewById(R.id.GifImageView);
-        gifImageView.setGifImageResource(R.drawable.waitinground);
+        gifImageView.setGifImageResource(R.drawable.main);
     }
 }
 
