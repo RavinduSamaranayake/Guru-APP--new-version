@@ -35,7 +35,7 @@ public class CourseList extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-               Toast.makeText(CourseList.this,"List Item was clicked at "+position,Toast.LENGTH_SHORT).show();
+              // Toast.makeText(CourseList.this,"List Item was clicked at "+position,Toast.LENGTH_SHORT).show();
                String crsname = crsNamelist.get(position);
                int crsid = crs.getCrsId(crsname);
                Crsid = crsid;

@@ -1,5 +1,6 @@
 package com.example.user.guruforstudent;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ public class ChooseInstitue extends AppCompatActivity {
     int crsId;
     int teacherId;
     int studentId;
+    private ProgressDialog progDailog;
     Institue ins = new Institue();
     Course crs = new Course();
     User u = new User();
@@ -46,12 +48,15 @@ public class ChooseInstitue extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_waiting_reg);
         getSupportActionBar().hide();
+
         spin = (Spinner) findViewById(R.id.insNameSpin);
         crsSpin = (Spinner) findViewById(R.id.crsNameSpin);
         regid = (EditText) findViewById(R.id.reg);
         nxt = (Button) findViewById(R.id.toMainpg);
         // logout = (Button)findViewById(R.id.LogOut);
         regtxt = (TextView) findViewById(R.id.tvregnm);
+
+       // progDailog.setCancelable(false);
 
         loadSpin();
         //loadCrsSpin("E Soft Metro Campus");
@@ -64,6 +69,8 @@ public class ChooseInstitue extends AppCompatActivity {
                     String regnum = regid.getText().toString();
                     insStudent ist = new insStudent();
                     PreparedStatement psist = ist.fillInsStTable(insId,stid,crsId,regnum,0);
+                    progDailog = ProgressDialog.show(ChooseInstitue.this, "Loading","Please wait...", true);
+                    //progDailog.show();
                     try {
                         if(psist.executeUpdate()>0){
                             Toast.makeText
@@ -74,6 +81,7 @@ public class ChooseInstitue extends AppCompatActivity {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
+                    progDailog.dismiss();
                 }
                 else if(u.getCurIdCurLevel()==3){ //user level is teacher
                     int tid = t.getCurTeachId(); //get currrent teacher id
@@ -81,7 +89,10 @@ public class ChooseInstitue extends AppCompatActivity {
                     System.out.println("******************TTTTTTTTTTTT*************teacher id is : "+tid+" *******************************");
                     String regnum = regid.getText().toString();
                     insTeacher ite = new insTeacher();
+
                     PreparedStatement psist = ite.fillInsTeachTable(insId,tid,crsId,regnum,0); //fill teacher institute table
+                   // progDailog.show();
+                    progDailog = ProgressDialog.show(ChooseInstitue.this, "Loading","Please wait...", true);
                     try {
                         if(psist.executeUpdate()>0){
                             Toast.makeText
@@ -92,6 +103,7 @@ public class ChooseInstitue extends AppCompatActivity {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
+                    progDailog.dismiss();
                 }
 
 

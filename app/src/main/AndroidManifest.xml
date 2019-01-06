@@ -54,7 +54,8 @@
         <activity android:name=".CourseList" />
         <activity android:name=".InstituteList" />
         <activity android:name=".syllabusDescription" />
-        <activity android:name=".viewComments"></activity>
+        <activity android:name=".viewComments" />
+        <activity android:name=".showMcq" />
     </application>
 
 </manifest>

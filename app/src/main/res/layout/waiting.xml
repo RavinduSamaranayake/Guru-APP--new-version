@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:gravity="center"
-    android:background="@drawable/waitreggif"
+    android:background="@drawable/gradient"
     tools:context="com.example.user.guruforstudent.WaitingReg">
 
     <com.example.user.guruforstudent.Controls.GifImageView
@@ -25,6 +25,6 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
-        app:srcCompat="@drawable/waitreggif" />
+        app:srcCompat="@drawable/waitinground" />
 
 </RelativeLayout>

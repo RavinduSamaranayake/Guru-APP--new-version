@@ -18,7 +18,6 @@ public class syllabusList extends AppCompatActivity {
     //CourseList crs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_syllabus_list);
         list_1 = (ListView)findViewById(R.id.clzlistview);
@@ -26,7 +25,7 @@ public class syllabusList extends AppCompatActivity {
         //clz = new classes();
         //crs = new CourseList();
         int insid = InstituteList.getInsId();
-        int crsid = CourseList.getCrsId();
+        final int crsid = CourseList.getCrsId();
         final List<List<String>> syllabuslist =  syllabus.getAllsyllabus(insid,crsid);
 
         CustomSyllabusList customsyllabus = new CustomSyllabusList(this,syllabuslist);
@@ -38,7 +37,7 @@ public class syllabusList extends AppCompatActivity {
                 String name = syllabuslist.get(position).get(0);
                String descript = syllabuslist.get(position).get(1);
                String learnpoints = syllabuslist.get(position).get(2);
-               openDesPg(name,descript,learnpoints);
+               openDesPg(name,descript,learnpoints,Integer.toString(crsid));
 
 
 
@@ -47,11 +46,12 @@ public class syllabusList extends AppCompatActivity {
 
     }
 
-    private void openDesPg(String name, String descript, String learnpoints) {
+    private void openDesPg(String name, String descript, String learnpoints, String courseId) {
         Intent intent = new Intent(this, syllabusDescription.class);
         intent.putExtra("name",name);
         intent.putExtra("description",descript);
         intent.putExtra("points",learnpoints);
+        intent.putExtra("courseId",courseId);
         startActivity(intent);
     }
 }
