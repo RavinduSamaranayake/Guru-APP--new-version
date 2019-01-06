@@ -15,6 +15,7 @@ public class searchCoursesWebview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_search_courses_webview);
             user = new User();
             String userid = Integer.toString(user.getCurUserId());

@@ -1,5 +1,6 @@
 package com.example.user.guruforstudent;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -33,6 +34,9 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     CardView rateIns;
     CardView searchCrs;
     User user;
+
+    private ProgressDialog dialog;
+
 
 
     @Override
@@ -71,6 +75,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         viewModule = (CardView)findViewById(R.id.viewModules);
         rateIns = (CardView)findViewById(R.id.rateInstitue);
         searchCrs = (CardView)findViewById(R.id.searchCrs);
+
+        dialog = new ProgressDialog(Home.this);
+        dialog.setMessage("Loading...");
+
 
 
         if(cur_ulevel == 4){
@@ -135,8 +143,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     }
 
     private void loadAddInspg() {
+        dialog.show();
         Intent intent = new Intent(this,ChooseInstitue.class);
         startActivity(intent);
+        dialog.dismiss();
     }
 
     @Override

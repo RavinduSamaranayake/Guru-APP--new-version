@@ -69,8 +69,8 @@ public class ChooseInstitue extends AppCompatActivity {
                     String regnum = regid.getText().toString();
                     insStudent ist = new insStudent();
                     PreparedStatement psist = ist.fillInsStTable(insId,stid,crsId,regnum,0);
-                    progDailog = ProgressDialog.show(ChooseInstitue.this, "Loading","Please wait...", true);
-                    //progDailog.show();
+                    progDailog = new ProgressDialog(ChooseInstitue.this);
+                    progDailog.setMessage("Loading...");
                     try {
                         if(psist.executeUpdate()>0){
                             Toast.makeText

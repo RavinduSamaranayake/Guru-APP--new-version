@@ -8,11 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.user.guruforstudent.Models.User;
+
 public class syllabusDescription extends AppCompatActivity {
     TextView nameview;
     TextView desc;
     TextView points;
     Button getReviews;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +25,18 @@ public class syllabusDescription extends AppCompatActivity {
         String descript = getIntent().getStringExtra("description");
         String lpoins = getIntent().getStringExtra("points");
         final String courseId = getIntent().getStringExtra("courseId");
+        user = new User();
+        int ulevel = user.getCurIdCurLevel();
         nameview = (TextView) findViewById(R.id.name);
         desc = (TextView) findViewById(R.id.description);
         points = (TextView) findViewById(R.id.learningpoint);
         getReviews = (Button) findViewById(R.id.mcqShow);
+        if(ulevel == 4){
+            getReviews.setVisibility(View.VISIBLE);
+        }
+        else{
+            getReviews.setVisibility(View.INVISIBLE);
+        }
         nameview.setText(name);
         desc.setText(descript);
         points.setText(lpoins);
