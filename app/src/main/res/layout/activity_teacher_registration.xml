@@ -208,7 +208,7 @@
         android:id="@+id/regtoIns"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/mybutton"
         android:padding="0dp"
@@ -216,7 +216,7 @@
         android:textColor="#fff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_conversion_absoluteHeight="51dp"
         tools:layout_conversion_absoluteWidth="85dp" />
 
@@ -224,7 +224,7 @@
         android:id="@+id/cancelBtn"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/mybutton"
         android:padding="16dp"
@@ -233,7 +233,7 @@
         android:textColor="#fff"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
