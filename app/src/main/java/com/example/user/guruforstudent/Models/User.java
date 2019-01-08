@@ -47,7 +47,7 @@ import java.util.List;
 
         }
 
-        public int UserLogin(String email, String passwd) {
+        public int UserLogin(String email, String passwd) { //check user email and password is valid or not
 
             this.email = email;
             this.passwd = passwd;
@@ -78,7 +78,7 @@ import java.util.List;
 
         }
 
-        public static PreparedStatement UserReg(String firstname, String lastname, String email, String password,int roleid)  {
+        public static PreparedStatement UserReg(String firstname, String lastname, String email, String password,int roleid)  { //fill the user table
             con = MyConnection.getconnection();
             String query = "INSERT INTO `users`( `firstname`, `Lastname`, `email`, `password`, `role_id`) VALUES (?,?,?,?,?)";
             try {
@@ -157,7 +157,7 @@ import java.util.List;
         return userinfolist;
     }
 
-    public int getCurUserId(){ //get the user level
+    public int getCurUserId(){ //get the user Id
         int uid =0;
         auth = FirebaseAuth.getInstance();
         String mail = auth.getCurrentUser().getEmail();

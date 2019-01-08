@@ -10,9 +10,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/mainicon"
+        android:icon="@mipmap/officiallogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/mainicon"
+        android:roundIcon="@mipmap/officiallogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".splashScreen">
@@ -56,7 +56,8 @@
         <activity android:name=".syllabusDescription" />
         <activity android:name=".viewComments" />
         <activity android:name=".showMcq" />
-        <activity android:name=".searchCoursesWebview"></activity>
+        <activity android:name=".searchCoursesWebview" />
+        <activity android:name=".addMcq"></activity>
     </application>
 
 </manifest>
