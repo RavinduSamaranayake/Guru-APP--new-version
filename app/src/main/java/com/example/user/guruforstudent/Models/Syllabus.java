@@ -53,4 +53,37 @@ public class Syllabus {
         return  syllabusName;
     }
 
+
+
+
+    public int getsyllabusId(String name){
+        int ID = 0;
+        String selectQuery = "SELECT `id` FROM `modules` WHERE `name` = ?";
+
+
+        try {
+            ps = con.prepareStatement(selectQuery);
+            ps.setString(1,name);
+            ResultSet rs = ps.executeQuery();
+
+            if(rs.next()){
+                ID = rs.getInt(1);
+
+            }
+            //con.close();
+
+        } catch (SQLException e) {
+            //Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            System.out.print(e.getMessage());
+        }
+
+
+
+
+
+
+        return ID;
+    }
+
+
 }

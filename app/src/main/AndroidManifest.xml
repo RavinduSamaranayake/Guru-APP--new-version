@@ -57,7 +57,8 @@
         <activity android:name=".viewComments" />
         <activity android:name=".showMcq" />
         <activity android:name=".searchCoursesWebview" />
-        <activity android:name=".addMcq"></activity>
+        <activity android:name=".addMcq" />
+        <activity android:name=".teachDesSyllabus"></activity>
     </application>
 
 </manifest>

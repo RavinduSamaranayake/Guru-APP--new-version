@@ -8,14 +8,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.user.guruforstudent.Models.Syllabus;
+import com.example.user.guruforstudent.Models.User;
 
 import java.util.List;
 
 public class syllabusList extends AppCompatActivity {
     Syllabus syllabus;
     ListView list_1;
-    //classes clz;
-    //CourseList crs;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
@@ -38,13 +38,31 @@ public class syllabusList extends AppCompatActivity {
                 String name = syllabuslist.get(position).get(0);
                String descript = syllabuslist.get(position).get(1);
                String learnpoints = syllabuslist.get(position).get(2);
-               openDesPg(name,descript,learnpoints,Integer.toString(crsid));
+                user = new User();
+                int ulevel = user.getCurIdCurLevel(); //to get the user level
+                if(ulevel == 4){ //when user is student
+                    openDesPg(name,descript,learnpoints,Integer.toString(crsid));
+                }
+                else{
+                    openTeachDesPg(name,descript,learnpoints,Integer.toString(crsid));
+                }
+
+
 
 
 
             }
         });
 
+    }
+
+    private void openTeachDesPg(String name, String descript, String learnpoints, String courseId) {
+        Intent intent = new Intent(this, teachDesSyllabus.class);
+        intent.putExtra("name",name);
+        intent.putExtra("description",descript);
+        intent.putExtra("points",learnpoints);
+        intent.putExtra("courseId",courseId);
+        startActivity(intent);
     }
 
     private void openDesPg(String name, String descript, String learnpoints, String courseId) {
