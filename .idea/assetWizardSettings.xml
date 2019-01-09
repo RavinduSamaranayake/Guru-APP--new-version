@@ -34,7 +34,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\USER\Desktop\icon.png" />
+                                      <entry key="imageAsset" value="C:\Users\USER\Desktop\logo.png" />
                                       <entry key="outputName" value="ic_maini_con" />
                                       <entry key="theme" value="HOLO_DARK" />
                                     </map>
@@ -42,11 +42,6 @@
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>

@@ -10,9 +10,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/officiallogo"
+        android:icon="@mipmap/ourlogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/officiallogo"
+        android:roundIcon="@mipmap/ourlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".splashScreen">
