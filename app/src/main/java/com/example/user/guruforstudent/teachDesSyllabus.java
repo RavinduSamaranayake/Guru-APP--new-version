@@ -15,7 +15,7 @@ public class teachDesSyllabus extends AppCompatActivity {
     TextView nameview;
     TextView desc;
     TextView points;
-    Button getReviews;
+    Button addMcqs;
     User user;
     Syllabus syllabus;
     int id;
@@ -23,7 +23,7 @@ public class teachDesSyllabus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide();
-        setContentView(R.layout.activity_syllabus_description);
+        setContentView(R.layout.activity_teach_des_syllabus);
         syllabus = new Syllabus();
         String name = getIntent().getStringExtra("name");
         id = syllabus.getsyllabusId(name);
@@ -32,14 +32,17 @@ public class teachDesSyllabus extends AppCompatActivity {
         final String courseId = getIntent().getStringExtra("courseId");
         user = new User();
         int ulevel = user.getCurIdCurLevel();
+
         nameview = (TextView) findViewById(R.id.name);
         desc = (TextView) findViewById(R.id.description);
         points = (TextView) findViewById(R.id.learningpoint);
-        getReviews = (Button) findViewById(R.id.mcqShow);
+        addMcqs = (Button) findViewById(R.id.btnaddMcq);
+
         nameview.setText(name);
         desc.setText(descript);
         points.setText(lpoins);
-        getReviews.setOnClickListener(new View.OnClickListener() {
+
+        addMcqs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent mcqIntent = new Intent(  teachDesSyllabus.this,addMcq.class);

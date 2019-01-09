@@ -22,7 +22,7 @@ public class addMcq extends AppCompatActivity {
     EditText s2;
     EditText s3;
     EditText s4;
-    EditText correct;
+
     EditText marks;
     Button create;
     Mcq mcq;
@@ -36,18 +36,22 @@ public class addMcq extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_mcq);
+        getSupportActionBar().hide();
         mcq = new Mcq();
         mcqDescript = findViewById(R.id.mcqdes);
         choice1 = findViewById(R.id.choice1);
         choice2 = findViewById(R.id.choice2);
         choice3 = findViewById(R.id.choice3);
         choice4 = findViewById(R.id.choice4);
-        correct = findViewById(R.id.correctans);
+        s1 = findViewById(R.id.s1);
+        s2 = findViewById(R.id.s2);
+        s3 = findViewById(R.id.s3);
+        s4 = findViewById(R.id.s4);
         marks = findViewById(R.id.marks);
         create = findViewById(R.id.btncreate);
 
         syllabusId = Integer.parseInt(getIntent().getStringExtra("syllabusId"));
-        marks.setOnClickListener(new View.OnClickListener() {
+        create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String mcqdes = mcqDescript.getText().toString();
@@ -77,16 +81,16 @@ public class addMcq extends AppCompatActivity {
                 else if(ch4.length() == 0){
                     Toast.makeText(getApplicationContext(), "You have not created Choice4", Toast.LENGTH_LONG).show();
                 }
-                else if((a1 != 0)||(a1 != 1)){
+                else if((a1 != 0)&&(a1 != 1)){
                     Toast.makeText(getApplicationContext(), "Please use valid bit for choices", Toast.LENGTH_LONG).show();
                 }
-                else if((a2 != 0)||(a2 != 1)){
+                else if((a2 != 0)&&(a2 != 1)){
                     Toast.makeText(getApplicationContext(), "Please use valid bit for choices", Toast.LENGTH_LONG).show();
                 }
-                else if((a3 != 0)||(a3 != 1)){
+                else if((a3 != 0)&&(a3 != 1)){
                     Toast.makeText(getApplicationContext(), "Please use valid bit for choices", Toast.LENGTH_LONG).show();
                 }
-                else if((a4 != 0)||(a4 != 1)){
+                else if((a4 != 0)&&(a4 != 1)){
                     Toast.makeText(getApplicationContext(), "Please use valid bit for choices", Toast.LENGTH_LONG).show();
                 }
                 else if(mark < 0 || mark > 10 ){
