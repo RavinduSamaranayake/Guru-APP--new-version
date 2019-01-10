@@ -58,67 +58,68 @@ public class ChooseInstitue extends AppCompatActivity {
 
        // progDailog.setCancelable(false);
 
-        loadSpin();
-        //loadCrsSpin("E Soft Metro Campus");
+        loadSpin();  //initially  to load to the institute list
+
         nxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(u.getCurIdCurLevel()==4){   // verify to the user level is student
-                    int stid = st.getCurStId();
-                    //String stdid = Integer.toString(stid);
-                    String regnum = regid.getText().toString();
-                    insStudent ist = new insStudent();
-                    PreparedStatement psist = ist.fillInsStTable(insId,stid,crsId,regnum,0);
-                    progDailog = new ProgressDialog(ChooseInstitue.this);
-                    progDailog.setMessage("Loading...");
-                    try {
-                        if(psist.executeUpdate()>0){
-                            Toast.makeText
-                                    (getApplicationContext(), "Student Registration is Sucessfully ", Toast.LENGTH_SHORT)
-                                    .show();
-                            waitreg();
-                        }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                    progDailog.dismiss();
-                }
-                else if(u.getCurIdCurLevel()==3){ //user level is teacher
-                    int tid = t.getCurTeachId(); //get currrent teacher id
-                   // String teachId = Integer.toString(tid);
-                    System.out.println("******************TTTTTTTTTTTT*************teacher id is : "+tid+" *******************************");
-                    String regnum = regid.getText().toString();
-                    insTeacher ite = new insTeacher();
+                String regnum = regid.getText().toString();
 
-                    PreparedStatement psist = ite.fillInsTeachTable(insId,tid,crsId,regnum,0); //fill teacher institute table
-                   // progDailog.show();
-                    progDailog = ProgressDialog.show(ChooseInstitue.this, "Loading","Please wait...", true);
-                    try {
-                        if(psist.executeUpdate()>0){
-                            Toast.makeText
-                                    (getApplicationContext(), "Teacher Registration is Sucessfully ", Toast.LENGTH_SHORT)
-                                    .show();
-                            waitreg();
+                if(regnum.length() == 0){  // validate register number is entered or not
+                    Toast.makeText
+                            (getApplicationContext(), "Please Add Your Institute Registration Number....", Toast.LENGTH_SHORT)
+                            .show();
+                }
+                else {
+                    if (u.getCurIdCurLevel() == 4) {   // verify to the user level is student
+
+
+                        int stid = st.getCurStId();
+                        insStudent ist = new insStudent();
+                        PreparedStatement psist = ist.fillInsStTable(insId, stid, crsId, regnum, 0);  //fill institute_student table
+                        progDailog = new ProgressDialog(ChooseInstitue.this);
+                        progDailog.setMessage("Loading...");
+                        try {
+                            if (psist.executeUpdate() > 0) {
+                                Toast.makeText
+                                        (getApplicationContext(), "Student Registration is Sucessfully ", Toast.LENGTH_SHORT)
+                                        .show();
+                                waitreg();
+                            }
+                        } catch (SQLException e) {
+                            e.printStackTrace();
                         }
-                    } catch (SQLException e) {
-                        e.printStackTrace();
+                        progDailog.dismiss();
+
+                    } else if (u.getCurIdCurLevel() == 3) { //user level is teacher
+                        int tid = t.getCurTeachId(); //get currrent teacher id
+
+                        System.out.println("******************TTTTTTTTTTTT*************teacher id is : " + tid + " *******************************");
+
+                        insTeacher ite = new insTeacher();
+
+                        PreparedStatement psist = ite.fillInsTeachTable(insId, tid, crsId, regnum, 0); //fill teacher institute table
+
+                        progDailog = ProgressDialog.show(ChooseInstitue.this, "Loading", "Please wait...", true);
+                        try {
+                            if (psist.executeUpdate() > 0) {
+                                Toast.makeText
+                                        (getApplicationContext(), "Teacher Registration is Sucessfully ", Toast.LENGTH_SHORT)
+                                        .show();
+                                waitreg();
+                            }
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                        progDailog.dismiss();
                     }
-                    progDailog.dismiss();
                 }
 
 
             }
         });
-      /*  logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //FileRW rw = new FileRW();
-                //rw.clearTheFile();
-                tologinpg();
 
-            }
-        }); */
-        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() { //when click spinner Item
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItemText = (String) parent.getItemAtPosition(position);
@@ -162,17 +163,6 @@ public class ChooseInstitue extends AppCompatActivity {
     }
 
 
-    private void openHomepg() {
-        Intent intent = new Intent(this,Home.class);
-        startActivity(intent);
-    }
-
-  /*  public void tologinpg() {
-        Intent intent = new Intent(this,Login.class);
-        startActivity(intent);
-
-
-    } */
 
     private void loadSpin() {
 
@@ -183,7 +173,7 @@ public class ChooseInstitue extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, insName);
 
 
-        // Drop down layout style - list view with radio button
+        // Drop down layout style
         dataAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
@@ -203,7 +193,7 @@ public class ChooseInstitue extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, crsName);
 
 
-        // Drop down layout style - list view with radio button
+        // Drop down layout style
         dataAdapter
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 

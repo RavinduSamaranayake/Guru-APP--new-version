@@ -30,13 +30,6 @@ public class Institutes extends AppCompatActivity {
 
         CustomMainList customMainList = new CustomMainList(this,crsNamelist);
         list_1.setAdapter(customMainList); //set the list items for list view
-       /* list_1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-               // Toast.makeText(Institutes.this,"List Item was clicked at "+position,Toast.LENGTH_SHORT).show();
-
-            }
-        }); */
 
 
 

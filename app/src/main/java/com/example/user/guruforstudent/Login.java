@@ -48,11 +48,13 @@ public class Login extends AppCompatActivity {
         //con = MyConnection.getconnection();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         tomain=(Button)findViewById(R.id.login);
         userregpg = (Button)findViewById(R.id.regBtn);
         username =(EditText)findViewById(R.id.txtUname);
         passwd =(EditText)findViewById(R.id.txtPasswd);
-        auth = FirebaseAuth.getInstance();
+
+        auth = FirebaseAuth.getInstance(); //get firebase authentication
         user = new User();
         t = new teacher();
         st = new Student();
@@ -150,10 +152,7 @@ public class Login extends AppCompatActivity {
         });
 
     }
-    public void openslctclsspg() {
-        Intent intent = new Intent(this,ChooseInstitue.class);
-        startActivity(intent);
-    }
+
     public void openregpg() {
         Intent intent = new Intent(this,userRegister.class);
         startActivity(intent);

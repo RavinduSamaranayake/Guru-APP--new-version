@@ -55,7 +55,7 @@ public class Institue {
 
         return  insName;
     }
-    public int getInsId(String name) {
+    public int getInsId(String name) {  //
         int insID = 0;
         String selectQuery = "SELECT `id` FROM `institutes` WHERE `name`=?";
 

@@ -96,9 +96,11 @@ public class teacherRegistration extends AppCompatActivity {
   String returnPassword = getIntent().getStringExtra("Password");
 
 
- //PreparedStatement ps1 = userRegister.getps();
+
  try {
  if (ps.executeUpdate() > 0) {
+
+  // Create user account with user name and password Authentication With Firebase
   auth.createUserWithEmailAndPassword(returnEmail,returnPassword).addOnCompleteListener(teacherRegistration.this, new OnCompleteListener<AuthResult>() {
    @Override
    public void onComplete(@NonNull Task<AuthResult> task) {
@@ -114,10 +116,10 @@ public class teacherRegistration extends AppCompatActivity {
 
 
  } else {
- Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
+     Toast.makeText(getApplicationContext(), "Registration fail", Toast.LENGTH_LONG).show();
  }
  } catch (Exception e) {
- Toast.makeText(getApplicationContext(), "........................" + e.getMessage(), Toast.LENGTH_LONG).show();
+     Toast.makeText(getApplicationContext(), "........................" + e.getMessage(), Toast.LENGTH_LONG).show();
  }
 
 

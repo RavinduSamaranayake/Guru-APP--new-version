@@ -23,8 +23,8 @@ public class syllabusList extends AppCompatActivity {
         setContentView(R.layout.activity_syllabus_list);
         list_1 = (ListView)findViewById(R.id.clzlistview);
         syllabus = new Syllabus();
-        //clz = new classes();
-        //crs = new CourseList();
+
+
         int insid = InstituteList.getInsId();
         final int crsid = CourseList.getCrsId();
         final List<List<String>> syllabuslist =  syllabus.getAllsyllabus(insid,crsid);

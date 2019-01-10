@@ -25,7 +25,7 @@ public class classes extends AppCompatActivity {
     static List<String> crsName;
     static int institute_id;
 
-    //String[] clzes = {"Class 01","Class 02","Class 03"};
+
 
 
     @Override

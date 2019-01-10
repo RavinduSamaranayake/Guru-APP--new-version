@@ -87,6 +87,7 @@ public class StudentRegistration extends AppCompatActivity {
                     int ag = Integer.parseInt(age.getText().toString());
                     String ol = olindex.getText().toString();
                     String al = alindex.getText().toString();
+
                     PreparedStatement ps = Student.StReg(nicnum, tel, sch, ag, ol, al);
                     String returnEmail = getIntent().getStringExtra("Email");
                     String returnPassword = getIntent().getStringExtra("Password");

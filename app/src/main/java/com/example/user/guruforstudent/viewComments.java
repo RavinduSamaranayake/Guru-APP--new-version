@@ -29,6 +29,8 @@ public class viewComments extends AppCompatActivity {
     int num_stars;
 
     @Override
+
+
     protected void onCreate(Bundle savedInstanceState) {
         getSupportActionBar().hide();
         super.onCreate(savedInstanceState);

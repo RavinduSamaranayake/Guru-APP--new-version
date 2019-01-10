@@ -25,18 +25,14 @@ public class syllabusDescription extends AppCompatActivity {
         String descript = getIntent().getStringExtra("description");
         String lpoins = getIntent().getStringExtra("points");
         final String courseId = getIntent().getStringExtra("courseId");
-        user = new User();
-        int ulevel = user.getCurIdCurLevel();
+
+
         nameview = (TextView) findViewById(R.id.name);
         desc = (TextView) findViewById(R.id.description);
         points = (TextView) findViewById(R.id.learningpoint);
         getReviews = (Button) findViewById(R.id.mcqShow);
-        if(ulevel == 4){
-            getReviews.setVisibility(View.VISIBLE);
-        }
-        else{
-            getReviews.setVisibility(View.INVISIBLE);
-        }
+
+
         nameview.setText(name);
         desc.setText(descript);
         points.setText(lpoins);

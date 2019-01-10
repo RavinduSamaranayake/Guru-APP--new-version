@@ -86,6 +86,7 @@ public class InstituteList extends AppCompatActivity {
         }
 
     }
+
     public static List<String> getCrsnamelist(){ //to getting your crsname list
         return crsName;
     }
